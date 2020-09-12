@@ -1,0 +1,272 @@
+//scss for component common
+a {
+	text-decoration: none;
+	display: block;
+	outline: none;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+img {
+	display: block;
+	// margin: 0 auto;
+	max-width: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	image-rendering: auto;
+}
+
+.logo {
+	max-width: 17rem;
+}
+
+.btn {
+	max-width: 17rem;
+	background: $white-cl;
+	@include br(5px);
+	@include transition(background-color $t2);
+	a {
+		display: inline-block;
+		width: 100%;
+		color: $black-cl;
+		font-size: 1.6rem;
+		line-height: 1.2;
+		@include transition(color $t2);
+	}
+	//font-size
+	&.--medium {
+		a {
+			font-size: 1.4rem;
+		}
+	}
+	&.--small {
+		a {
+			font-size: 1.2rem;
+		}
+	}
+	//layout
+	&.--has-bg {
+		background: $black-cl;
+	}
+	&.--rounded {
+		@include br(999px);
+	}
+	&.--has-border {
+		border: 1px solid $border-cl;
+	}
+	//padding
+	&.--padding {
+		a {
+			padding: 1.5rem 2.5rem;
+			text-align: center;
+		}
+	}
+	//font-weight
+	&.--bold {
+		a {
+			font-weight: bold;
+		}
+	}
+	//color
+	&.--white {
+		a {
+			color: $white-cl;
+		}
+	}
+	&.--blue {
+		a {
+			color: #1074d3;
+		}
+	}
+}
+
+.main-title {
+	line-height: 1.2;
+	font-size: 3rem;
+	&.--large {
+		font-size: 6rem;
+	}
+	&.--medium {
+		font-size: 3.6rem;
+	}
+	&.--small {
+		font-size: 2rem;
+		@include leading(20, 24);
+	}
+	&.--white {
+		color: $white-cl;
+	}
+	&.--black {
+		color: $black-cl;
+	}
+	&.--thin {
+		font-weight: 300;
+	}
+	&.--normal {
+		font-weight: 500;
+	}
+	&.--bold {
+		font-weight: bold;
+	}
+}
+
+.scroll-btn {
+	width: 4rem;
+	height: 4rem;
+	background-color: #fff;
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	border: 0;
+	cursor: pointer;
+	outline: none;
+	border-radius: 50%;
+	box-shadow: 0 0 5px #acacac;
+	z-index: 9999;
+	&.fas {
+		font-size: 1.6rem;
+	}
+}
+
+/* List */
+.list {
+	width: calc(100% + 3rem);
+	margin-left: -1.5rem;
+	margin-right: -1.5rem;
+	@include flex(row, space-between, stretch);
+	&-item {
+		width: 20%;
+		padding: 0 1.5rem;
+	}
+
+	@include desktop {
+		&-item {
+			width: 25%;
+		}
+	}
+	@include tablet {
+		&-item {
+			width: calc(100% / 3);
+		}
+	}
+	@include mobile {
+		&-item {
+			width: 100%;
+		}
+	}
+	.box {
+		height: 100%;
+		width: 100%;
+		img {
+			object-fit: cover;
+			width: 100%;
+		}
+	}
+}
+.arrow {
+	position: relative;
+	width: calc(100% - 10rem);
+	height: 1rem;
+
+	font-size: 2rem;
+	background-color: $white-cl;
+	border-bottom: 1px solid $border-cl;
+	i {
+		position: absolute;
+		top: 100%;
+		right: -5rem;
+		@include transform(translateY(-50%));
+		cursor: pointer;
+		&:last-child {
+			right: -10rem;
+		}
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		right: -7rem;
+		top: 100%;
+		width: 0.1rem;
+		height: 4rem;
+		background-color: $border-cl;
+		@include transform(translateY(-50%));
+	}
+}
+/* List - End*/
+
+/* Heading */
+.heading {
+	margin-bottom: 4rem;
+	.main-title {
+		margin-bottom: 1.2rem;
+	}
+	&__desc {
+		font-size: 1.6rem;
+	}
+	.btn {
+		display: inline-block;
+		margin: 0 auto;
+	}
+}
+/* Heading - End*/
+
+/* Description - Box*/
+.desc-box {
+	margin-bottom: 4rem;
+	.title {
+		margin-bottom: 1.2rem;
+		@include flex(row, flex-start, center);
+		img {
+			margin-right: 1.2rem;
+		}
+	}
+	.desc {
+		color: #868789;
+		font-size: 1.4rem;
+		@include leading(14, 24);
+	}
+	.start {
+		margin-left: auto;
+		span {
+			position: relative;
+			display: inline-block;
+			height: 1.5rem;
+			width: 1.5rem;
+			margin-right: 0.3rem;
+			&.f::after,
+			&.n::after {
+				content: '\f005';
+				position: absolute;
+				font-family: 'font awesome 5 free';
+				font-weight: 900;
+				font-size: 1.5rem;
+			}
+			&.f::after {
+				color: #f7941d;
+			}
+			&.n::after {
+				color: #e1e1e1;
+			}
+		}
+	}
+	.btn {
+		margin-top: 1.2rem;
+	}
+}
+/* Description - Box - End*/
+
+/* Animation*/
+@include keyframes(showForm) {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+/* Animation - End*/

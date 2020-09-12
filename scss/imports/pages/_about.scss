@@ -1,0 +1,186 @@
+/* About */
+.about {
+	padding: 7rem 0;
+	&__left {
+		li {
+			list-style-type: disc;
+			list-style-position: inside;
+			margin-bottom: 1.5rem;
+			@include tracking(40);
+			@include leading(14, 20);
+		}
+	}
+	@include tablet {
+		padding: 4rem 0;
+		&__right {
+			img {
+				margin: 0 auto;
+			}
+		}
+	}
+}
+/* About - End */
+
+/* About Team */
+.about-team {
+	background: #ebebeb;
+	padding: 7rem 0;
+	.main-title.--medium {
+		margin-bottom: 4rem;
+	}
+	&__box {
+		background: $white-cl;
+		padding: 3rem;
+		@include flex(row, space-between, center);
+		@include br(5px);
+		img {
+			width: 17rem;
+			height: 17rem;
+			object-fit: cover;
+			@include br(50%);
+		}
+		.desc-box {
+			padding-left: 3rem;
+			.title {
+				justify-content: space-between;
+				small {
+					font-size: 1.3rem;
+					color: $text-gray-cl;
+					font-weight: 300;
+				}
+			}
+			.desc {
+				margin-bottom: 2rem;
+			}
+			.social {
+				a {
+					display: inline-block;
+					margin-right: 1.6rem;
+					font-size: 1.6rem;
+					color: $black-cl;
+				}
+			}
+		}
+	}
+	@include tablet {
+		padding: 4rem 0;
+		.main-title.--medium {
+			margin-bottom: 2rem;
+		}
+		&__box {
+			flex-direction: column;
+			padding: 1.5rem;
+			margin-bottom: 2rem;
+			img {
+				margin-bottom: 2rem;
+			}
+			.desc-box {
+				margin-bottom: 0;
+				padding-left: 0;
+			}
+		}
+	}
+}
+/* About Team - End*/
+
+/* About Info */
+.about-info {
+	padding: 8rem 0;
+	background-image: url('../imgs/benefit-bg.png');
+	background-size: cover;
+
+	&__box {
+		width: 100%;
+		padding: 3rem 0;
+		@include flex(row, flex-start, flex-start, wrap);
+		img {
+			padding: 2rem;
+			object-fit: cover;
+		}
+		p {
+			margin-top: 2.5rem;
+			font-size: 1.6rem;
+			text-transform: uppercase;
+		}
+	}
+	@include desktop {
+		padding: 0;
+		&__box {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			img {
+				min-height: 9rem;
+			}
+			.main-title {
+				text-align: center;
+			}
+		}
+	}
+	@include mobile {
+		&__box {
+			padding: 1.5rem 0;
+			img {
+				min-height: auto;
+				padding-bottom: 0;
+			}
+		}
+	}
+}
+/* About Info - End*/
+
+/* People */
+.people {
+	background-image: url('../imgs/people-bg.png');
+	background-position: center;
+	background-size: conver;
+	padding: 13rem 0;
+	&__content {
+		color: $white-cl;
+		text-align: center;
+		@include offset(5);
+		@include leading(14, 20);
+		@include flex(column, center, center);
+		& > * {
+			margin-bottom: 2.5rem;
+		}
+		.main-title {
+			font-size: 4rem;
+			text-transform: capitalize;
+		}
+		img {
+			width: 4.5rem;
+			height: 3.5rem;
+			object-fit: cover;
+		}
+		p {
+			font-size: 1.4rem;
+		}
+		strong {
+			font-weight: bold;
+			font-size: 1.6rem;
+			@include tracking(40);
+		}
+	}
+	&__pagination {
+		span {
+			display: inline-block;
+			width: 1rem;
+			height: 1rem;
+			margin-right: 0.6rem;
+			background: #a1a1a1;
+			cursor: pointer;
+			@include br(100%);
+			&.active {
+				background: $white-cl;
+			}
+		}
+	}
+	@include mobile {
+		padding: 4rem 0;
+		&__content {
+			@include offset(0);
+		}
+	}
+}
+/* People - End*/

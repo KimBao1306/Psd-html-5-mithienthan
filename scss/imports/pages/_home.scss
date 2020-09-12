@@ -1,0 +1,327 @@
+/* Banner */
+.banner {
+	position: relative;
+	height: 100%;
+	margin-top: 17.8rem;
+	background-image: url('../imgs/banner-bg.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	.container {
+		padding: 20rem 1.5rem;
+		& > * {
+			margin-bottom: 3.5rem;
+		}
+	}
+	small {
+		font-family: 'BT';
+		color: #909090;
+		font-size: 2.4rem;
+	}
+	h1 {
+		width: 50%;
+	}
+	&__breadcrumb {
+		span {
+			position: relative;
+			color: $white-cl;
+			font-size: 1.4rem;
+			margin-right: 2.2rem;
+			&:not(:last-child)::after {
+				content: '/';
+				position: absolute;
+				top: 50%;
+				right: -1.6rem;
+				font-size: 1.2rem;
+				color: $white-cl;
+				@include transform(translateY(-50%));
+			}
+		}
+	}
+
+	/*Responsive*/
+	@include mobile {
+		.container {
+			text-align: center;
+		}
+		h1 {
+			width: 100%;
+		}
+		.btn {
+			margin: 0 auto;
+		}
+	}
+}
+/* Banner - End */
+
+/* Benenfit  */
+.benefit {
+	padding: 7.5rem 0;
+	background-image: url('../imgs/benefit-bg.png');
+
+	@include mobile {
+		.c-md-4:nth-child(even) {
+			margin: 2rem 0;
+		}
+	}
+
+	.desc-box {
+		margin-bottom: 0;
+		.title {
+			min-height: 5rem;
+		}
+	}
+}
+/* Benenfit - End */
+
+/* Product */
+.product {
+	padding: 7rem 0;
+	max-width: calc(100% - 15rem);
+	margin: 0 auto;
+	.desc-box {
+		.desc {
+			font-size: 1.6rem;
+		}
+	}
+	@include desktop {
+		& {
+			padding: 1.5rem;
+			max-width: 100%;
+		}
+	}
+}
+/* Product - End */
+
+/* Collection */
+.collection {
+	padding-bottom: 6.4rem;
+	&__top {
+		margin-bottom: 1.5rem;
+		@include flex(row, space-between, center, wrap);
+		.left {
+			width: (70rem / 117rem * 100%);
+			img {
+				object-fit: cover;
+			}
+		}
+		.right {
+			width: (40rem / 117rem * 100%);
+			.btn {
+				a {
+					color: $black-cl;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	&__bottom {
+		@include flex(row, space-between, stretch, wrap);
+
+		& > div {
+			padding: 12rem 5rem 9rem;
+		}
+
+		.left {
+			width: (38rem / 117rem * 100%);
+			background-image: url('../imgs/collection-img-2.png');
+			background-size: cover;
+			background-position: bottom center;
+
+			.desc-box {
+				.desc {
+					max-width: 27rem;
+					@include leading(14, 20);
+				}
+			}
+		}
+
+		.right {
+			position: relative;
+			width: (78rem / 117rem * 100%);
+			background-image: url('../imgs/collection-img-3.png');
+			background-size: cover;
+			background-position: center right;
+			.desc-box {
+				position: relative;
+				z-index: 1;
+				.desc {
+					max-width: 27rem;
+					color: $white-cl;
+					@include leading(14, 20);
+				}
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 0;
+				background: rgba($color: $black-cl, $alpha: 0.3);
+			}
+		}
+	}
+	@include tablet {
+		&__bottom {
+			.left,
+			.right {
+				width: calc(50% - 1.5rem);
+			}
+		}
+	}
+	@include mobile {
+		&__bottom,
+		&__top {
+			flex-direction: column;
+			.left,
+			.right {
+				width: 100%;
+				.desc-box {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&__bottom {
+			.left,
+			.right {
+				padding: 2rem;
+			}
+		}
+	}
+}
+/* Collection - End */
+
+/* Course */
+.course {
+	background: #f8f8f8;
+
+	.list {
+		margin-bottom: 3rem;
+		&-item {
+			position: relative;
+			width: 25%;
+			img {
+				width: 100%;
+				height: 42rem;
+				object-fit: cover;
+			}
+			.desc-box {
+				position: absolute;
+				bottom: 1rem;
+				left: 50%;
+				width: 80%;
+
+				@include transform(translateX(-50%));
+				@include transition(all $t2);
+				@include hidden;
+				.main-title {
+					font-size: 2.5rem;
+					margin-bottom: 2.8rem;
+				}
+				.btn {
+					background: none;
+					a {
+						text-align: center;
+						text-decoration: underline;
+					}
+				}
+			}
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 1.5rem;
+				width: calc(100% - 3rem);
+				height: 100%;
+				background-color: rgba($color: #000000, $alpha: 0.5);
+				@include hidden;
+				@include transition(all $t2);
+			}
+			&:hover {
+				.desc-box,
+				&::before {
+					@include visible;
+				}
+			}
+		}
+	}
+	.btn {
+		margin: 0 auto;
+	}
+
+	@include tablet {
+		.list {
+			flex-wrap: wrap;
+			margin-bottom: 1rem;
+			&-item {
+				width: 50%;
+				margin-bottom: 2rem;
+				.desc-box,
+				&::before {
+					@include visible;
+				}
+				.desc-box {
+					.title {
+						justify-content: center;
+					}
+				}
+			}
+		}
+	}
+	@include mobile {
+		.list {
+			&-item {
+				width: 100%;
+			}
+		}
+	}
+}
+/* Course - End */
+
+/* Blog */
+.blog {
+	background: none;
+	max-width: calc(100% - 38rem);
+	margin: 0 auto;
+	padding: 8rem 0;
+
+	.list {
+		&-item {
+			position: relative;
+			width: calc(100% / 3);
+			img {
+				margin-bottom: 3rem;
+				height: 32rem;
+				object-fit: cover;
+			}
+			.desc-box {
+				.main-title {
+					font-size: 1.6rem;
+				}
+			}
+		}
+	}
+
+	@include desktop {
+		& {
+			max-width: calc(100% - 15rem);
+		}
+	}
+	@include tablet {
+		& {
+			padding: 0 1.5rem;
+			max-width: 100%;
+		}
+	}
+	@include mobile {
+		.list {
+			flex-wrap: wrap;
+			&-item {
+				width: 100%;
+			}
+		}
+	}
+}
+/* Blog - End */
