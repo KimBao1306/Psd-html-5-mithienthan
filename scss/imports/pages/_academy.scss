@@ -1,0 +1,231 @@
+/* Academy */
+.academy {
+	padding: 7rem 0;
+	.main-title {
+		margin-bottom: 3rem;
+	}
+	//Left
+	&__left {
+		& > *:not(:last-child) {
+			margin-bottom: 4rem;
+		}
+		h3 {
+			font-weight: bold;
+			font-size: 1.8rem;
+			margin-bottom: 3rem;
+		}
+	}
+	&__banner {
+		img {
+			width: 100%;
+			max-height: 46rem;
+			margin-bottom: 4rem;
+			object-fit: cover;
+		}
+	}
+	&__content {
+		p {
+			text-align: justify;
+			font-size: 1.4rem;
+			line-height: 1.5;
+			&:first-child {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+	&__info {
+		td {
+			font-size: 1.4rem;
+			padding: 2.5rem;
+			border: 1px solid $border-cl;
+			ul {
+				padding-left: 1rem;
+				li {
+					list-style-type: disc;
+					&:not(:last-child) {
+						margin-bottom: 1.5rem;
+					}
+				}
+			}
+			&:first-child {
+				width: 50%;
+				vertical-align: middle;
+			}
+		}
+	}
+	&__course-content {
+		ul {
+			li {
+				font-size: 1.4rem;
+				list-style-type: disc;
+				&:not(:last-child) {
+					margin-bottom: 1.5rem;
+				}
+			}
+		}
+	}
+	&__video {
+		width: 100%;
+		max-height: 46rem;
+	}
+	&__form form {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(3, 7.5rem);
+		grid-gap: 3rem;
+		font-size: 1.4rem;
+
+		label {
+			display: inline-block;
+			margin-bottom: 1rem;
+		}
+		input,
+		select {
+			width: 100%;
+			padding: 2rem;
+			border: 1px solid $border-cl;
+			outline: none;
+			color: $text-gray-cl;
+		}
+		.btn {
+			grid-row: 4/5;
+		}
+	}
+	//Right
+	.aside {
+		& > * {
+			margin-bottom: 4rem;
+			h3 {
+				margin-bottom: 2rem;
+				font-size: 1.8rem;
+				font-weight: bold;
+			}
+		}
+		&__avatar {
+			& > * {
+				margin-bottom: 1.5rem;
+			}
+			img {
+				margin: 0 auto 1.5rem;
+				width: 23rem;
+				height: 23rem;
+				object-fit: cover;
+				@include br(100%);
+			}
+			p {
+				font-size: 1.4rem;
+				text-align: center;
+			}
+			ul {
+				@include flex(row, center, center, wrap);
+				li {
+					&:not(:last-child) {
+						margin-right: 2rem;
+					}
+					a {
+						color: $black-cl;
+						font-size: 2rem;
+					}
+				}
+			}
+		}
+		&__search {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			input {
+				width: 100%;
+				height: 100%;
+				padding: 1.5rem;
+				border: 1px solid $border-cl;
+				outline: none;
+				@include br(5px);
+			}
+			&::after {
+				content: '\f002';
+				font-family: 'Font Awesome 5 Free';
+				font-weight: 900;
+				position: absolute;
+				top: 50%;
+				right: 1.5rem;
+				font-size: 2rem;
+				@include transform(translateY(-50%));
+			}
+		}
+		&__training {
+			ul {
+				li {
+					list-style-type: disc;
+					list-style-position: inside;
+					font-size: 1.4rem;
+					&:not(:last-child) {
+						margin-bottom: 1.5rem;
+					}
+				}
+			}
+		}
+		&__blog {
+			& > div {
+				@include flex(row, flex-start, center);
+				img {
+					margin-right: 1.5rem;
+					max-width: 6rem;
+					max-height: 6rem;
+					@include br(100%);
+				}
+				div {
+					height: 100%;
+					p {
+						margin-bottom: 1rem;
+						font-size: 1.2rem;
+						color: $text-gray-cl;
+					}
+					a {
+						font-size: 1.4rem;
+						color: $black-cl;
+					}
+				}
+				&:not(:last-child) {
+					margin-bottom: 2rem;
+				}
+			}
+		}
+	}
+	@include tablet {
+		&__course-content {
+			ul {
+				li {
+					list-style-type: none;
+				}
+			}
+		}
+		.aside__blog {
+			margin-bottom: 0;
+		}
+	}
+	@include mobile {
+		& {
+			padding: 4rem 0;
+		}
+
+		//Left
+		&__left {
+			& > *:not(:last-child) {
+				margin-bottom: 2rem;
+			}
+		}
+		&__banner {
+			img {
+				margin-bottom: 2rem;
+			}
+		}
+		&__form form {
+			margin-bottom: 2rem;
+			grid-template-columns: 1fr;
+			.btn {
+				grid-row: 6 / 7;
+			}
+		}
+	}
+}
+/* Academy - End */

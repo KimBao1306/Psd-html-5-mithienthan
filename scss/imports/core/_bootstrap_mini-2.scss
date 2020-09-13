@@ -45,6 +45,7 @@
 .c-md-6,
 .c-md-7,
 .c-md-8,
+.c-md-9,
 .c-md-12,
 .c-sm-3,
 .c-sm-4,
@@ -63,19 +64,27 @@
 }
 
 .c-xs-3 {
-	width: 25%;
+	-ms-flex: 0 0 25%;
+	flex: 0 0 25%;
+	max-width: 25%;
 }
 
 .c-xs-4 {
-	width: 33.3333333333%;
+	-ms-flex: 0 0 33.333333%;
+	flex: 0 0 33.333333%;
+	max-width: 33.333333%;
 }
 
 .c-xs-6 {
-	width: 50%;
+	-ms-flex: 0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
 }
 
 .c-xs-12 {
-	width: 100%;
+	-ms-flex: 0 0 100%;
+	flex: 0 0 100%;
+	max-width: 100%;
 }
 
 //768 - 991
@@ -143,6 +152,11 @@
 		-ms-flex: 0 0 66.666667%;
 		flex: 0 0 66.666667%;
 		max-width: 66.666667%;
+	}
+	.c-md-9 {
+		-ms-flex: 0 0 75%;
+		flex: 0 0 75%;
+		max-width: 75%;
 	}
 	.c-md-12 {
 		-ms-flex: 0 0 100%;
