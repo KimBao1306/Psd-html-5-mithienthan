@@ -551,6 +551,7 @@ img {
 .c-md-5,
 .c-md-6,
 .c-md-7,
+.c-md-8,
 .c-md-12,
 .c-sm-3,
 .c-sm-4,
@@ -650,6 +651,12 @@ img {
     -ms-flex: 0 0 58.333333%;
     flex: 0 0 58.333333%;
     max-width: 58.333333%;
+  }
+
+  .c-md-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
   }
 
   .c-md-12 {
@@ -1200,6 +1207,7 @@ img {
   background-image: url("../imgs/banner-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
   /*Responsive*/
 }
 .banner .container {
@@ -1216,13 +1224,14 @@ img {
 .banner h1 {
   width: 50%;
 }
-.banner__breadcrumb span {
+.banner__breadcrumb a {
   position: relative;
-  color: #fff;
+  display: inline-block;
   font-size: 1.4rem;
+  color: #fff;
   margin-right: 2.2rem;
 }
-.banner__breadcrumb span:not(:last-child)::after {
+.banner__breadcrumb a:not(:last-child)::after {
   content: "/";
   position: absolute;
   top: 50%;
@@ -1709,5 +1718,71 @@ img {
 }
 
 /* People - End*/
+/* Maps */
+.maps {
+  padding: 7rem 0;
+  height: 63rem;
+}
+.maps iframe {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .maps {
+    padding: 4rem 0;
+  }
+}
+
+/* Maps - End */
+/* Contact */
+.contact {
+  padding-bottom: 7rem;
+}
+.contact .main-title {
+  margin-bottom: 2rem;
+}
+.contact__info li {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+.contact__info li span {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.contact__form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 4.5rem 1fr;
+  grid-gap: 1rem;
+}
+.contact__form input,
+.contact__form textarea {
+  padding: 1.5rem 2rem;
+  outline: none;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+}
+.contact__form textarea {
+  grid-column: 1/4;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .contact {
+    padding-bottom: 4rem;
+  }
+  .contact__form {
+    display: block;
+  }
+  .contact__form input,
+.contact__form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Contact - End */
 
 /*# sourceMappingURL=style.css.map */

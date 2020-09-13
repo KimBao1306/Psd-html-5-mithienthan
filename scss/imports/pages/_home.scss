@@ -6,6 +6,7 @@
 	background-image: url('../imgs/banner-bg.png');
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center center;
 	.container {
 		padding: 20rem 1.5rem;
 		& > * {
@@ -21,10 +22,11 @@
 		width: 50%;
 	}
 	&__breadcrumb {
-		span {
+		a {
 			position: relative;
-			color: $white-cl;
+			display: inline-block;
 			font-size: 1.4rem;
+			color: $white-cl;
 			margin-right: 2.2rem;
 			&:not(:last-child)::after {
 				content: '/';
