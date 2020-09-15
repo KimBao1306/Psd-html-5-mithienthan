@@ -7,11 +7,13 @@
 	margin: 0 auto;
 	z-index: 900;
 	background-color: $white-cl;
+
 	box-shadow: 0 0 12px rgba($color: #000000, $alpha: 0.3);
+	& > * {
+		@include transition(0.3s);
+	}
 	//Info
 	&__info {
-		width: 100%;
-		height: 100%;
 		padding: 1.4rem 0;
 		font-size: 1.3rem;
 		border-bottom: 1px solid $border-cl;
@@ -41,6 +43,7 @@
 	}
 	//Search
 	&__search {
+		width: 100%;
 		padding: 2rem 0;
 		border-bottom: 1px solid $border-cl;
 		.row {
@@ -172,7 +175,7 @@
 		position: relative;
 		width: 3rem;
 		height: 2rem;
-
+		margin-left: auto;
 		display: none;
 		cursor: pointer;
 		span,
@@ -247,6 +250,20 @@
 	}
 	/** Overlay - End */
 
+	/** Scroll */
+	&.--scroll {
+		.header__info {
+			@include hidden;
+			height: 0;
+			padding: 0;
+		}
+		.header__search,
+		.header__mobile {
+			padding: 1rem 0;
+		}
+	}
+	/** Scroll - End */
+
 	/** Responsive */
 	@include desktop {
 		&__search {
@@ -296,7 +313,7 @@
 			position: fixed;
 			top: 0;
 			left: 0;
-
+			overflow-y: scroll;
 			width: 25rem;
 			height: 100vh;
 			background: $black-light-cl;
@@ -315,6 +332,9 @@
 				li {
 					width: 100%;
 					border-bottom: 1px solid $white-cl;
+					&:last-child {
+						display: block;
+					}
 					a {
 						color: $white-cl;
 						width: 100%;
@@ -350,7 +370,7 @@
 			display: block;
 		}
 		&__mobile {
-			padding: 1.5rem;
+			padding: 1.5rem 0;
 		}
 	}
 	/** Responsive - End*/

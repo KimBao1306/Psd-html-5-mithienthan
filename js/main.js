@@ -21,12 +21,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	//fixed menu
 	const nav = document.querySelector('.header');
-
+	const banner = document.querySelector('.banner');
 	function fixedMenu() {
 		if (document.documentElement.scrollTop > 0 || document.body.scrollTop > 0) {
 			nav.classList.add('--scroll');
+			banner.classList.add('--scroll');
 		} else {
 			nav.classList.remove('--scroll');
+			banner.classList.remove('--scroll');
 		}
 	}
 	window.addEventListener('scroll', fixedMenu);
@@ -54,25 +56,12 @@ window.addEventListener('DOMContentLoaded', () => {
 	);
 	const list = new Swiper('.swiper-container', {
 		slidesPerView: 'auto',
-		// spaceBetween: 30,
-
-		autoplay: 1000,
-		speed: 600,
-		// autoplayDisableOnInteraction: false,
-		// breakpoints: {
-		// 	768: {
-		// 		slidesPerView: 2,
-		// 	},
-		// 	992: {
-		// 		slidesPerView: 3,
-		// 	},
-		// 	1200: {
-		// 		slidesPerView: 4,
-		// 	},
-		// 	1600: {
-		// 		slidesPerView: 5,
-		// 	},
-		// },
+		autoplay: {
+			speed: 500,
+		},
+		speed: 800,
+		autoHeight: false,
+		loop: true,
 
 		navigation: {
 			prevEl: '.arrow .fa-angle-left',
